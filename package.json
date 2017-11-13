@@ -1,0 +1,31 @@
+{
+  "name": "tmsv3-server",
+  "version": "3.0.0",
+  "description": "Static backend ExpressJS server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "engines": {
+    "node": "9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grod220/TMSv3.git"
+  },
+  "author": "Gabe Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grod220/TMSv3/issues"
+  },
+  "homepage": "https://github.com/grod220/TMSv3#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
