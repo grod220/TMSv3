@@ -7,6 +7,23 @@ import TMSlogo from "../../Assets/images/logo.svg";
 import MiniLogo from "../../Assets/images/minilogo.svg";
 import MobileMenuBackground from "../../Assets/images/mobile_menu.jpg";
 
+const SubBarText = ({ className }) => {
+  return (
+    <div className={className}>
+      <span>
+        <a
+          href="https://goo.gl/maps/eb4QHbvh3z42"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          7325 Lake Underhill Road
+        </a>
+      </span>
+      <span>407-270-6505</span>
+    </div>
+  );
+};
+
 const NavBar = styled.ul`
   color: rgb(61, 61, 61);
   list-style: none;
@@ -21,12 +38,12 @@ const NavBar = styled.ul`
     color: #902e2d;
   }
 
-  ${media.tablet`font-size: 2.2rem;`} ${media.phone`
+  ${media.tablet`font-size: 2.2rem;`} 
+  ${media.phone`
     position: fixed;
     background-color: white;
-    margin: 0;
-    top: 0;
-    bottom: 0;
+    left: ${props => props.showMobileMenu ? '0' : '-30.7rem'};
+    top: -5.2rem;
     height: 100%;
     width: 22.7rem;
     box-shadow: 20px 0px 54px -4px rgba(0,0,0,1);
@@ -34,6 +51,7 @@ const NavBar = styled.ul`
     z-index: 1000;
     background: url(${MobileMenuBackground}) center top;
     background-size: cover;
+    transition: left .4s ease-in;
 
     padding: 3rem 3.5rem 0 0;
     text-transform: uppercase;
@@ -78,23 +96,6 @@ const Logo = styled.div`
     display: none;
   `};
 `;
-
-const SubBarText = ({ className }) => {
-  return (
-    <div className={className}>
-      <span>
-        <a
-          href="https://goo.gl/maps/eb4QHbvh3z42"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          7325 Lake Underhill Road
-        </a>
-      </span>
-      <span>407-270-6505</span>
-    </div>
-  );
-};
 
 const SubBar = styled(SubBarText)`
   background: rgba(119, 103, 103, 0.64);
@@ -169,6 +170,8 @@ const DismissX = styled.div`
   font-size: 2rem;
   margin: -2rem -2rem 2rem 0;
   
+  span {cursor: pointer;}
+  
   ${media.phone`
     display: block;
   `};
@@ -189,12 +192,21 @@ const MobileMoreDetails = styled(SubBarText)`
 
 
 class Navigation extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showMobileMenu: false
+    };    
+  }
+
+  toggleMobileMenu = () => this.setState(prevState => ({showMobileMenu: !prevState.showMobileMenu}))
+
   render() {
     return (
       <div>
-        <NavBar>
+        <NavBar {...this.state}>
           <NavLinks>
-            <DismissX>✕</DismissX>
+            <DismissX onClick={this.toggleMobileMenu}><span>✕</span></DismissX>
             <li>
               <Link to="/menu">Menus</Link>
             </li>
@@ -218,7 +230,7 @@ class Navigation extends Component {
           </NavLinks>
         </NavBar>
         <MobileNavBar>
-          <span>&#9776;</span>
+          <span onClick={this.toggleMobileMenu}>&#9776;</span>
           <Link to="/">
             <img src={MiniLogo} alt="The Meatball Stoppe logo" />
           </Link>
