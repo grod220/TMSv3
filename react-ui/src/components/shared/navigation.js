@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 
 import TMSlogo from "../../Assets/images/logo.svg";
 import MiniLogo from "../../Assets/images/minilogo.svg";
+import MobileMenuBackground from "../../Assets/images/mobile_menu.jpg";
 
-const LargeNavBar = styled.ul`
+const NavBar = styled.ul`
   color: rgb(61, 61, 61);
   list-style: none;
   padding: 0;
@@ -16,19 +17,50 @@ const LargeNavBar = styled.ul`
   height: 4rem;
   margin: 5.2rem 0 0 0;
 
-  ${media.tablet`font-size: 2.2rem;`} 
-  ${media.phone`display: none;`} 
-
   a:hover {
     color: #902e2d;
   }
 
+  ${media.tablet`font-size: 2.2rem;`} ${media.phone`
+    position: fixed;
+    background-color: white;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 22.7rem;
+    box-shadow: 20px 0px 54px -4px rgba(0,0,0,1);
+    flex-direction: column;
+    z-index: 1000;
+    background: url(${MobileMenuBackground}) center top;
+    background-size: cover;
+
+    padding: 3rem 3.5rem 0 0;
+    text-transform: uppercase;
+    justify-content: inherit;
+    align-items: flex-end;
+    text-align: right;
+    color: white;
+    font-size: 3rem;
+    line-height: 4.1rem;
+    
+    li {
+      padding-bottom: 2rem;
+    }
+    
+  `};
 `;
 
 const NavLinks = styled.div`
   display: flex;
   flex-basis: 25rem;
   justify-content: space-around;
+
+  ${media.phone`
+    display: block;
+    flex-basis: 0;
+    justify-content: inherit;
+  `};
 `;
 
 const Logo = styled.div`
@@ -41,9 +73,30 @@ const Logo = styled.div`
     margin: -3rem 0 0 0;
     width: 15rem;
   `};
+
+  ${media.phone`
+    display: none;
+  `};
 `;
 
-const SubBar = styled.div`
+const SubBarText = ({ className }) => {
+  return (
+    <div className={className}>
+      <span>
+        <a
+          href="https://goo.gl/maps/eb4QHbvh3z42"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          7325 Lake Underhill Road
+        </a>
+      </span>
+      <span>407-270-6505</span>
+    </div>
+  );
+};
+
+const SubBar = styled(SubBarText)`
   background: rgba(119, 103, 103, 0.64);
   color: #fff;
   width: 100%;
@@ -52,6 +105,10 @@ const SubBar = styled.div`
   display: flex;
   justify-content: center;
   position: absolute;
+
+  a:hover {
+    color: #dbdbdb;
+  }
 
   ${media.phone`
     flex-direction: column;
@@ -79,14 +136,6 @@ const SubBar = styled.div`
       justify-content: center;
   `};
   }
-
-  a:hover {
-    color: #dbdbdb;
-  }
-
-  ${media.phone`
-    flex-direction: column;
-  `};
 `;
 
 const MobileNavBar = styled.div`
@@ -115,12 +164,37 @@ const MobileNavBar = styled.div`
   }
 `;
 
+const DismissX = styled.div`
+  display: none;
+  font-size: 2rem;
+  margin: -2rem -2rem 2rem 0;
+  
+  ${media.phone`
+    display: block;
+  `};
+`;
+
+const MobileMoreDetails = styled(SubBarText)`
+  display: none;
+  font-size: 1.6rem;
+  text-transform: none;
+  line-height: 2rem;
+
+  ${media.phone`
+    display: flex;
+    flex-direction: column;
+  `}
+`
+
+
+
 class Navigation extends Component {
   render() {
     return (
       <div>
-        <LargeNavBar>
+        <NavBar>
           <NavLinks>
+            <DismissX>✕</DismissX>
             <li>
               <Link to="/menu">Menus</Link>
             </li>
@@ -135,14 +209,14 @@ class Navigation extends Component {
           </Logo>
           <NavLinks>
             <li>
-              {" "}
               <Link to="/aboutus">About Us</Link>
             </li>
             <li>
               <Link to="/media">Media</Link>
             </li>
+            <MobileMoreDetails />
           </NavLinks>
-        </LargeNavBar>
+        </NavBar>
         <MobileNavBar>
           <span>&#9776;</span>
           <Link to="/">
@@ -150,18 +224,7 @@ class Navigation extends Component {
           </Link>
           <div />
         </MobileNavBar>
-        <SubBar>
-          <span>
-            <a
-              href="https://goo.gl/maps/eb4QHbvh3z42"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              7325 Lake Underhill Road
-            </a>
-          </span>
-          <span>407-270-6505</span>
-        </SubBar>
+        <SubBar />
       </div>
     );
   }
