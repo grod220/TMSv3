@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/grod220/TMSv3#readme",
   "dependencies": {
+    "compression": "^1.7.1",
     "express": "^4.16.2"
   }
 }
