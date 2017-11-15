@@ -6,7 +6,7 @@ const generateHeroImage = storage => {
     requireContext.keys().map(requireContext);
 
   const allHeroes = requireAll(
-    require.context("../../Assets/images", false, /hero\d.+jpg/)
+    require.context("../../assets/images", false, /hero\d.+jpg/)
   );
 
   let randomIndex, randomHero;
@@ -33,10 +33,10 @@ const HeroImage = styled.div`
   background-image: url('${generateHeroImage(sessionStorage)}');
 `;
 
-class Hero extends Component {
+class BigHero extends Component {
   render() {
     return <HeroImage />;
   }
 }
 
-export default Hero;
+export default BigHero;

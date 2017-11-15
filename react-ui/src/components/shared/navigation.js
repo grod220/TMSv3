@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { media } from "../../media.js";
 import { Link } from "react-router-dom";
 
-import TMSlogo from "../../Assets/images/logo.svg";
-import MiniLogo from "../../Assets/images/minilogo.svg";
-import MobileMenuBackground from "../../Assets/images/mobile_menu.jpg";
+import TMSlogo from "../../assets/images/logo.svg";
+import MiniLogo from "../../assets/images/minilogo.svg";
+import MobileMenuBackground from "../../assets/images/mobile_menu.jpg";
 
 const SubBarText = ({ className }) => {
   return (
@@ -25,7 +25,6 @@ const SubBarText = ({ className }) => {
 };
 
 const NavBar = styled.ul`
-  color: rgb(61, 61, 61);
   list-style: none;
   padding: 0;
   display: flex;
@@ -60,11 +59,11 @@ const NavBar = styled.ul`
     color: white;
     font-size: 3rem;
     line-height: 4.1rem;
-    
+
     li {
       padding-bottom: 2rem;
     }
-    
+
   `};
 `;
 
@@ -219,7 +218,7 @@ class Navigation extends Component {
                 to="/menu"
                 onClick={() => this.toggleMobileMenu(null, false)}
               >
-                Menus
+                Menu
               </Link>
             </li>
             <li>
