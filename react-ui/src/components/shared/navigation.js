@@ -51,7 +51,7 @@ const NavBar = styled.ul`
     z-index: 1000;
     background: url(${MobileMenuBackground}) center top;
     background-size: cover;
-    transition: left .4s ease-in;
+    transition: left .25s ease-in;
 
     padding: 3rem 3.5rem 0 0;
     text-transform: uppercase;
@@ -147,14 +147,11 @@ const MobileNavBar = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${media.phone`
-    display: flex;
-  `};
-
   span {
     color: white;
     font-size: 4.7rem;
     margin-left: 2rem;
+    cursor: pointer;
   }
   img {
     height: 9.2rem;
@@ -163,6 +160,10 @@ const MobileNavBar = styled.div`
     width: 4.2rem;
     margin-right: 2rem;
   }
+
+  ${media.phone`
+    display: flex;
+  `};
 `;
 
 const DismissX = styled.div`
@@ -189,8 +190,6 @@ const MobileMoreDetails = styled(SubBarText)`
   `}
 `
 
-
-
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -199,8 +198,8 @@ class Navigation extends Component {
     };    
   }
 
-  toggleMobileMenu = () => this.setState(prevState => ({showMobileMenu: !prevState.showMobileMenu}))
-
+  toggleMobileMenu = (event, status) => this.setState(prevState => ({showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu}))
+  
   render() {
     return (
       <div>
@@ -208,10 +207,10 @@ class Navigation extends Component {
           <NavLinks>
             <DismissX onClick={this.toggleMobileMenu}><span>✕</span></DismissX>
             <li>
-              <Link to="/menu">Menus</Link>
+              <Link to="/menu" onClick={() => this.toggleMobileMenu(null,false)}>Menus</Link>
             </li>
             <li>
-              <Link to="/catering">Catering</Link>
+              <Link to="/catering" onClick={() => this.toggleMobileMenu(null,false)}>Catering</Link>
             </li>
           </NavLinks>
           <Logo>
@@ -221,10 +220,10 @@ class Navigation extends Component {
           </Logo>
           <NavLinks>
             <li>
-              <Link to="/aboutus">About Us</Link>
+              <Link to="/aboutus" onClick={() => this.toggleMobileMenu(null,false)}>About Us</Link>
             </li>
             <li>
-              <Link to="/media">Media</Link>
+              <Link to="/media" onClick={() => this.toggleMobileMenu(null,false)}>Media</Link>
             </li>
             <MobileMoreDetails />
           </NavLinks>
