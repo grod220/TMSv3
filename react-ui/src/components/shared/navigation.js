@@ -145,7 +145,7 @@ const MobileNavBar = styled.div`
   background-color: #711518;
   justify-content: space-between;
   align-items: center;
-  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   span {
     color: white;
@@ -170,7 +170,7 @@ const DismissX = styled.div`
   display: none;
   font-size: 2rem;
   margin: -2rem -2rem 2rem 0;
-  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   span {
     cursor: pointer;
