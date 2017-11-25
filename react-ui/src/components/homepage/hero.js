@@ -31,11 +31,26 @@ const HeroImage = styled.div`
   background-position: 50% 0;
   background-color: #674c4d;
   background-image: url('${generateHeroImage(sessionStorage)}');
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `;
+
+const HeroText = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 -34rem 6rem 0;
+  font-size: 1.2rem;
+`
 
 class BigHero extends Component {
   render() {
-    return <HeroImage />;
+    return <HeroImage>
+      <HeroText>
+        <div>As featured on Diners, Drive-Ins and Dives</div>
+        <div><em>with Guy Fieri, Food Network</em></div></HeroText>
+    </HeroImage>;
   }
 }
 
