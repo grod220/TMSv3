@@ -55,15 +55,20 @@ const HeroText = styled.div`
     font-size 5.3vw;
     margin: 0 0 5rem 0;
   `};
-`
+`;
 
 class BigHero extends Component {
   render() {
-    return <HeroImage>
-      <HeroText>
-        <div>As featured on Diners, Drive-Ins & Dives</div>
-        <div><em>with Guy Fieri, Food Network</em></div></HeroText>
-    </HeroImage>;
+    return (
+      <HeroImage>
+        <HeroText>
+          <div>As featured on Diners, Drive-Ins & Dives</div>
+          <div>
+            <em>with Guy Fieri, Food Network</em>
+          </div>
+        </HeroText>
+      </HeroImage>
+    );
   }
 }
 
