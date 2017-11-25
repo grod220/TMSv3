@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import BigHero from "./hero";
 import OrderBar from "./orderBar";
+import SocialBar from "./socialBar";
 
 class Homepage extends Component {
   render() {
@@ -9,6 +10,7 @@ class Homepage extends Component {
       <div>
         <BigHero />
         <OrderBar />
+        <SocialBar />
       </div>
     );
   }
