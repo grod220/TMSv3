@@ -1,12 +1,12 @@
 const express = require('express');
 const path = require('path');
-const shrinkRay = require('shrink-ray');
+const compression = require('compression')
 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(shrinkRay())
+app.use(compression())
 
 app.use(express.static(path.resolve(__dirname, './react-ui/build')));
 
