@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import FBIcon from "../../assets/images/facebook.png";
+import FBSmallIcon from "../../assets/images/fblogo.svg";
 import TwitterIcon from "../../assets/images/twitter.png";
 import InstagramIcon from "../../assets/images/instagram.png";
 import YelpIcon from "../../assets/images/yelp.png";
@@ -28,7 +29,7 @@ const TwoItemHolder = styled.div`
   display: flex;
   width: 80vw;
   justify-content: center;
-  div {
+  > div {
     flex: 1;
   }
 `;
@@ -58,9 +59,10 @@ const OuterBox = styled.div`
   margin-top: -4.5rem;
   background: #fff;
   padding: 10px;
+  transition: all 0.6s;
 
-  div:hover {
-    transform: scale(1.2);
+  &:hover {
+    transform: scale(1.03);
   }
 `;
 
@@ -70,7 +72,7 @@ const SocialWrapper = styled.div`
   position: relative;
   color: #337ab7;
 
-  a:hover {
+  &:hover {
     color: coral;
   }
 `;
@@ -91,17 +93,21 @@ const ContentBlock = styled.div`
   width: 100%;
   background: hsla(0, 0%, 100%, 0.85);
   line-height: 28px;
+  display: flex;
 `;
 
 const Caption = styled.div`
   font-size: 20px;
-  padding: 20px 5% 0;
-  margin-bottom: 0;
+  padding: 2rem;
+  flex: 7;
 `;
 
-const SmallSocialIcons = styled.div`
-  padding: 10px;
-  text-align: right;
+const SmallFBIcon = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
 `;
 
 class SocialBar extends Component {
@@ -132,23 +138,25 @@ class SocialBar extends Component {
             ))}
           </LeftSide>
           <div>
-            <OuterBox>
-              <SocialWrapper>
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://www.facebook.com/meatballstoppe/posts/1604387876249769"
-                >
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.facebook.com/meatballstoppe/posts/1604387876249769"
+            >
+              <OuterBox>
+                <SocialWrapper>
                   <FBImage />
                   <ContentBlock>
                     <Caption>
                       Goooooo knights! Buy one get one meatball. Come swing by!
                     </Caption>
-                    <SmallSocialIcons />
+                    <SmallFBIcon>
+                      <img src={FBSmallIcon} alt="Facebook icon" width='40' height='40' />
+                    </SmallFBIcon>
                   </ContentBlock>
-                </a>
-              </SocialWrapper>
-            </OuterBox>
+                </SocialWrapper>
+              </OuterBox>
+            </a>
           </div>
         </TwoItemHolder>
       </Container>
