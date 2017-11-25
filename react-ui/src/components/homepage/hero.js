@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { media } from "../../media.js";
 
 const generateHeroImage = storage => {
   const requireAll = requireContext =>
@@ -40,15 +41,27 @@ const HeroText = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  margin: 0 -34rem 6rem 0;
-  font-size: 1.2rem;
+  align-items: flex-end;
+  margin: 0 -21rem 5rem 0;
+  font-size: 3.2rem;
+
+  ${media.tablet`
+    margin-right: -11rem;
+    font-size: 2.7rem;
+  `};
+
+  ${media.phone`
+    align-items: center;
+    font-size 5.3vw;
+    margin: 0 0 5rem 0;
+  `};
 `
 
 class BigHero extends Component {
   render() {
     return <HeroImage>
       <HeroText>
-        <div>As featured on Diners, Drive-Ins and Dives</div>
+        <div>As featured on Diners, Drive-Ins & Dives</div>
         <div><em>with Guy Fieri, Food Network</em></div></HeroText>
     </HeroImage>;
   }
