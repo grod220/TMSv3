@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import BigHero from "./hero";
 import OrderBar from "./orderBar";
 import SocialBar from "./socialBar";
+import HomeMenu from "./homeMenu";
 
 class Homepage extends Component {
   render() {
@@ -11,6 +12,7 @@ class Homepage extends Component {
         <BigHero />
         <OrderBar />
         <SocialBar />
+        <HomeMenu />
       </div>
     );
   }
