@@ -73,9 +73,6 @@ const BorderBox = styled.div`
   padding: 3rem 3rem 1rem;
   width: 75vw;
   margin-top: 6.5rem;
-
-  ${media.phone`
-    width: 85vw;`}
 `;
 
 const RedHeader = styled.div`
@@ -105,6 +102,7 @@ const ThreeTestimonials = styled.div`
 `;
 const LearnMore = styled.div`
   font-style: italic;
+  text-align: center;
 `;
 
 const Highlight = styled.span`
