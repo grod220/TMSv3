@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { media } from "../../media";
 
 import FBIcon from "../../assets/images/facebook.png";
 import FBSmallIcon from "../../assets/images/fblogo.svg";
@@ -29,9 +30,16 @@ const TwoItemHolder = styled.div`
   display: flex;
   width: 80vw;
   justify-content: center;
+
   > div {
     flex: 1;
   }
+
+  ${media.tablet`
+    flex-direction:column;
+  `} ${media.phone`
+    flex-direction:column;
+  `};
 `;
 
 const LeftSide = styled.div`
@@ -39,6 +47,10 @@ const LeftSide = styled.div`
   padding: 4rem 2%;
   img {
     margin-right: 2.4rem;
+    ${media.tablet`
+      margin-right: 0`}
+    ${media.phone`
+      margin-right: 0`}
   }
 `;
 
@@ -52,6 +64,22 @@ const Connect = styled.div`
   font-size: 4.5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  ${media.tablet`
+    display:none;
+  `} ${media.phone`
+  display:none;
+  `};
+`;
+
+const SocialIcons = styled.div`
+  ${media.tablet`
+    display:flex;
+    justify-content: space-around;
+    margin: 2rem;`}
+ ${media.phone`
+    display:flex;
+    justify-content: space-around;
+    margin: 2rem;`};
 `;
 
 const OuterBox = styled.div`
@@ -99,15 +127,15 @@ const ContentBlock = styled.div`
 const Caption = styled.div`
   font-size: 20px;
   padding: 2rem;
-  flex: 7;
+  width: 85%;
 `;
 
 const SmallFBIcon = styled.div`
-  flex: 1;
   display: flex;
   justify-content: center;
   align-content: center;
   align-self: center;
+  margin-right: 1.8rem;
 `;
 
 class SocialBar extends Component {
@@ -122,20 +150,22 @@ class SocialBar extends Component {
               and closed on Sundays. Come visit us!
             </div>
             <Connect>Connect with us!</Connect>
-            {Object.keys(allSocialIcons).map(service => (
-              <a
-                href={allSocialIcons[service].linkTo}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={service}
-              >
-                <img
-                  src={allSocialIcons[service].url}
+            <SocialIcons>
+              {Object.keys(allSocialIcons).map(service => (
+                <a
+                  href={allSocialIcons[service].linkTo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={service}
-                  alt={service}
-                />
-              </a>
-            ))}
+                >
+                  <img
+                    src={allSocialIcons[service].url}
+                    key={service}
+                    alt={service}
+                  />
+                </a>
+              ))}
+            </SocialIcons>
           </LeftSide>
           <div>
             <a
@@ -151,7 +181,12 @@ class SocialBar extends Component {
                       Goooooo knights! Buy one get one meatball. Come swing by!
                     </Caption>
                     <SmallFBIcon>
-                      <img src={FBSmallIcon} alt="Facebook icon" width='40' height='40' />
+                      <img
+                        src={FBSmallIcon}
+                        alt="Facebook icon"
+                        width="40"
+                        height="40"
+                      />
                     </SmallFBIcon>
                   </ContentBlock>
                 </SocialWrapper>
