@@ -57,6 +57,7 @@ const LeftSide = styled.div`
 const Highlight = styled.span`
   color: #902e2d;
   font-weight: 700;
+  font-style: italic;
 `;
 
 const Connect = styled.div`
@@ -72,6 +73,8 @@ const Connect = styled.div`
 `;
 
 const SocialIcons = styled.div`
+  ${media.desktop`
+    min-width: 35.5rem`}
   ${media.tablet`
     display:flex;
     justify-content: space-around;
@@ -83,10 +86,10 @@ const SocialIcons = styled.div`
 `;
 
 const OuterBox = styled.div`
-  box-shadow: -5px 1px 13px 0 rgba(0, 0, 0, 0.5);
-  margin-top: -4.5rem;
+  box-shadow: -.5rem .1rem 1.3rem 0 rgba(0, 0, 0, 0.5);
+  margin: -4.5rem 0 2rem 0;
   background: #fff;
-  padding: 10px;
+  padding: 1rem;
   transition: all 0.6s;
 
   &:hover {
@@ -95,7 +98,7 @@ const OuterBox = styled.div`
 `;
 
 const SocialWrapper = styled.div`
-  height: 370px;
+  height: 37rem;
   overflow: hidden;
   position: relative;
   color: #337ab7;
@@ -120,12 +123,12 @@ const ContentBlock = styled.div`
   bottom: 0;
   width: 100%;
   background: hsla(0, 0%, 100%, 0.85);
-  line-height: 28px;
+  line-height: 2.8rem;
   display: flex;
 `;
 
 const Caption = styled.div`
-  font-size: 20px;
+  font-size: 2rem;
   padding: 2rem;
   width: 85%;
 `;

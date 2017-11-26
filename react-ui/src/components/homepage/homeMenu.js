@@ -9,10 +9,22 @@ import menuHeroImg from "../../assets/images/our_menu.jpg";
 
 const MenuHero = styled.div`
     text-align: center;
-    margin-bottom: 25px;
     background: url(${menuHeroImg}) no-repeat center 0;
-    background-size: auto;
-    height: 280px;
+    background-size: cover;
+    height: 28rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+    color: white;
+    font-size: 11rem;
+
+    ${media.tablet`
+      font-size: 10rem;
+    `}
+    ${media.phone`
+      font-size: 9rem;
+    `}
 `
 
 class HomeMenu extends Component {
