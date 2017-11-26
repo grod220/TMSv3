@@ -86,6 +86,7 @@ const RedHeader = styled.div`
   font-size: 6.5rem;
   color: white;
   font-family: "Dancing Script", cursive;
+  -webkit-backface-visibility: hidden;
 
   ${media.tablet`
     font-size: 4.3rem;`}
