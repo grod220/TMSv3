@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { media } from "../../media.js";
 import MobileMenuBackground from "../../assets/images/mobile_menu.jpg";
 
+// it should be a separate component in a separate folder
 const SubBarText = ({ className }) => {
     return (
       <div className={className}>
@@ -19,6 +20,8 @@ const SubBarText = ({ className }) => {
       </div>
     );
   }; 
+  
+// always use propTypes and defaultProps 
 
 export const NavBar = styled.ul`
 list-style: none;

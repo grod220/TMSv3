@@ -14,6 +14,7 @@ import {
   SubBar
 } from "./navigation-styles";
 
+// it should be a separate component in a separate folder
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +23,7 @@ class Navigation extends Component {
     };
   }
 
+  // what is the purpose of event parameter?
   toggleMobileMenu = (event, status) =>
     this.setState(prevState => ({
       showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu
@@ -36,8 +38,11 @@ class Navigation extends Component {
               <span>✕</span>
             </DismissX>
             <li>
+              {/* I recommend creating a config file in the navigation folder. it will list all pages and URLs to them */}
               <Link
                 to="/menu"
+                // it's better to create the class method 
+                // closeMenu = () => this.toggleMobileMenu(null, false)
                 onClick={() => this.toggleMobileMenu(null, false)}
               >
                 Menu
