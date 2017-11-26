@@ -39,6 +39,7 @@ const TwoItemHolder = styled.div`
     flex-direction:column;
   `} ${media.phone`
     flex-direction:column;
+    width: 95vw;
   `};
 `;
 
