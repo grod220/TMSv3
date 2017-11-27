@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import TMSlogo from "./images/logo.svg";
 import MiniLogo from "./images/minilogo.svg";
+import NavItem from "./navItem";
 
 import {
   NavBar,
@@ -22,7 +23,7 @@ class Navigation extends Component {
     };
   }
 
-  toggleMobileMenu = (event, status) =>
+  toggleMobileMenu = status => () =>
     this.setState(prevState => ({
       showMobileMenu: status !== undefined ? status : !prevState.showMobileMenu
     }));
@@ -32,25 +33,15 @@ class Navigation extends Component {
       <div>
         <NavBar {...this.state}>
           <NavLinks>
-            <DismissX onClick={this.toggleMobileMenu}>
+            <DismissX onClick={this.toggleMobileMenu()}>
               <span>✕</span>
             </DismissX>
-            <li>
-              <Link
-                to="/menu"
-                onClick={() => this.toggleMobileMenu(null, false)}
-              >
-                Menu
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/catering"
-                onClick={() => this.toggleMobileMenu(null, false)}
-              >
-                Catering
-              </Link>
-            </li>
+            <NavItem path="/menu" action={this.toggleMobileMenu(false)}>
+              Menu
+            </NavItem>
+            <NavItem path="/catering" action={this.toggleMobileMenu(false)}>
+              Catering
+            </NavItem>
           </NavLinks>
           <Logo>
             <Link to="/">
@@ -58,27 +49,17 @@ class Navigation extends Component {
             </Link>
           </Logo>
           <NavLinks>
-            <li>
-              <Link
-                to="/aboutus"
-                onClick={() => this.toggleMobileMenu(null, false)}
-              >
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/media"
-                onClick={() => this.toggleMobileMenu(null, false)}
-              >
-                Media
-              </Link>
-            </li>
+            <NavItem path="/aboutus" action={this.toggleMobileMenu(false)}>
+              About Us
+            </NavItem>
+            <NavItem path="/media" action={this.toggleMobileMenu(false)}>
+              Media
+            </NavItem>
             <MobileMoreDetails />
           </NavLinks>
         </NavBar>
         <MobileNavBar>
-          <span onClick={this.toggleMobileMenu}>&#9776;</span>
+          <span onClick={this.toggleMobileMenu()}>&#9776;</span>
           <Link to="/">
             <img src={MiniLogo} alt="The Meatball Stoppe logo" />
           </Link>
