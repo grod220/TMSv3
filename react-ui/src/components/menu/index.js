@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import ShortHero from "../shared/shortHero";
+import ShortHero from "../shared/shortHero/";
 
 class Menu extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navigation from "./components/shared/navigation";
+import Navigation from "./components/shared/navigation/";
 import Homepage from "./components/homepage";
 import Menu from "./components/menu";
 import Catering from "./components/catering";

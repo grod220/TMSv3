@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import TMSlogo from "../../assets/images/logo.svg";
-import MiniLogo from "../../assets/images/minilogo.svg";
+import TMSlogo from "./images/logo.svg";
+import MiniLogo from "./images/minilogo.svg";
 
 import {
   NavBar,

@@ -1,30 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { media } from "../../media.js";
+import { media } from "../../../sharedUtilities/media";
 
-const generateHeroImage = storage => {
-  const requireAll = requireContext =>
-    requireContext.keys().map(requireContext);
-
-  const allHeroes = requireAll(
-    require.context("../../assets/images", false, /hero\d.+jpg/)
-  );
-
-  let randomIndex, randomHero;
-
-  // Checks and saves to session storage
-  if (storage && storage.getItem("heroIndex")) {
-    randomIndex = Number(storage.getItem("heroIndex"));
-    randomHero = allHeroes[randomIndex];
-  } else {
-    randomIndex = Math.floor(Math.random() * allHeroes.length);
-    randomHero = allHeroes[randomIndex];
-  }
-
-  storage.setItem("heroIndex", randomIndex);
-
-  return randomHero;
-};
+import { generateHeroImage } from "./generateHero";
 
 const HeroImage = styled.div`
   height: 40rem;

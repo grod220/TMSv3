@@ -1,25 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { media } from "../../media";
+import { media } from "../../../sharedUtilities/media";
 
-import FBIcon from "../../assets/images/facebook.png";
-import FBSmallIcon from "../../assets/images/fblogo.svg";
-import TwitterIcon from "../../assets/images/twitter.png";
-import InstagramIcon from "../../assets/images/instagram.png";
-import YelpIcon from "../../assets/images/yelp.png";
+import FBSmallIcon from "./images/fblogo.svg";
 
-const allSocialIcons = {
-  facebook: { url: FBIcon, linkTo: "https://www.facebook.com/meatballstoppe/" },
-  twitter: { url: TwitterIcon, linkTo: "https://twitter.com/orlandomeatball" },
-  instagram: {
-    url: InstagramIcon,
-    linkTo: "https://www.instagram.com/themeatballstoppe/"
-  },
-  yelp: {
-    url: YelpIcon,
-    linkTo: "https://www.yelp.com/biz/the-meatball-stoppe-orlando-2"
-  }
-};
+import { allSocialIcons } from "./socialIconsConfig";
 
 const Container = styled.div`
   display: flex;
@@ -49,9 +34,8 @@ const LeftSide = styled.div`
   img {
     margin-right: 2.4rem;
     ${media.tablet`
-      margin-right: 0`}
-    ${media.phone`
-      margin-right: 0`}
+      margin-right: 0`} ${media.phone`
+      margin-right: 0`};
   }
 `;
 
@@ -75,19 +59,17 @@ const Connect = styled.div`
 
 const SocialIcons = styled.div`
   ${media.desktop`
-    min-width: 35.5rem`}
-  ${media.tablet`
+    min-width: 35.5rem`} ${media.tablet`
     display:flex;
     justify-content: space-around;
-    margin: 2rem;`}
- ${media.phone`
+    margin: 2rem;`} ${media.phone`
     display:flex;
     justify-content: space-around;
     margin: 2rem;`};
 `;
 
 const OuterBox = styled.div`
-  box-shadow: -.5rem .1rem 1.3rem 0 rgba(0, 0, 0, 0.5);
+  box-shadow: -0.5rem 0.1rem 1.3rem 0 rgba(0, 0, 0, 0.5);
   margin: -4.5rem 0 2rem 0;
   background: #fff;
   padding: 1rem;
@@ -155,17 +137,17 @@ class SocialBar extends Component {
             </div>
             <Connect>Connect with us!</Connect>
             <SocialIcons>
-              {Object.keys(allSocialIcons).map(service => (
+              {allSocialIcons.map((service,i) => (
                 <a
-                  href={allSocialIcons[service].linkTo}
+                  href={service.linkTo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  key={service}
+                  key={i}
                 >
                   <img
-                    src={allSocialIcons[service].url}
-                    key={service}
-                    alt={service}
+                    src={service.url}
+                    key={i}
+                    alt={service.name + " icon"}
                   />
                 </a>
               ))}

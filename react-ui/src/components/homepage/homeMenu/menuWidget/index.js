@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { media } from "../../media";
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { media } from "../../media.js";
+import { media } from "../../../sharedUtilities/media";
 import { Link } from "react-router-dom";
 
 const RedBar = styled.div`

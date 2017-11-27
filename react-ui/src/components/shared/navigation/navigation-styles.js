@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { media } from "../../media.js";
-import MobileMenuBackground from "../../assets/images/mobile_menu.jpg";
+import { media } from "../../../sharedUtilities/media";
+import MobileMenuBackground from "./images/mobile_menu.jpg";
 
 const SubBarText = ({ className }) => {
     return (
@@ -18,7 +18,7 @@ const SubBarText = ({ className }) => {
         <span>407-270-6505</span>
       </div>
     );
-  }; 
+  };
 
 export const NavBar = styled.ul`
 list-style: none;
