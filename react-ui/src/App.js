@@ -3,7 +3,7 @@ import Navigation from "./components/shared/navigation";
 import Homepage from "./components/homepage";
 import Menu from "./components/menu";
 import Catering from "./components/catering";
-import AboutUs from "./components/aboutus";
+import AboutUs from "./components/aboutUs";
 import Media from "./components/media";
 import Delivery from "./components/delivery";
 
