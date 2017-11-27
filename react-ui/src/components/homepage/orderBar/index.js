@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { media } from "../../../sharedUtilities/media";
 import { Link } from "react-router-dom";
@@ -22,8 +22,7 @@ const Container = styled.div`
     ${media.tablet`
       width: 100%;
       margin-left: 3rem;
-      max-width: 33rem;
-    `};
+      max-width: 33rem;`};
 
     ${media.phone`
       width: 100%;`};
@@ -31,8 +30,7 @@ const Container = styled.div`
 
   a + a {
     ${media.tablet`
-      margin-right: 3rem;
-    `};
+      margin-right: 3rem;`};
   }
 
   ${media.tablet`
@@ -60,30 +58,27 @@ const WhiteButton = styled.button`
   ${media.tablet`
     font-size: 2.4rem;
     margin: 2rem 0`};
+
   ${media.phone`
     font-size: 2.4rem;
     margin: 0;`};
 `;
 
-class OrderBar extends Component {
-  render() {
-    return (
-      <RedBar>
-        <Container>
-          <a
-            href="http://eat24hrs.com/restaurants/order2/menu.php?id=71250"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhiteButton>Pickup Order</WhiteButton>
-          </a>
-          <Link to="/delivery">
-            <WhiteButton>Delivery Order</WhiteButton>
-          </Link>
-        </Container>
-      </RedBar>
-    );
-  }
-}
+const OrderBar = () => (
+  <RedBar>
+    <Container>
+      <a
+        href="http://eat24hrs.com/restaurants/order2/menu.php?id=71250"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <WhiteButton>Pickup Order</WhiteButton>
+      </a>
+      <Link to="/delivery">
+        <WhiteButton>Delivery Order</WhiteButton>
+      </Link>
+    </Container>
+  </RedBar>
+);
 
 export default OrderBar;

@@ -3,7 +3,7 @@ import TwitterIcon from "./images/twitter.png";
 import InstagramIcon from "./images/instagram.png";
 import YelpIcon from "./images/yelp.png";
 
-export const allSocialIcons = [
+export default [
   {
     name: "Facebook",
     url: FBIcon,

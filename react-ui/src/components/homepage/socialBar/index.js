@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { media } from "../../../sharedUtilities/media";
 
 import FBSmallIcon from "./images/fblogo.svg";
-
-import { allSocialIcons } from "./socialIconsConfig";
+import allSocialIcons from "./socialIconsInfo";
 
 const Container = styled.div`
   display: flex;
@@ -21,20 +20,24 @@ const TwoItemHolder = styled.div`
   }
 
   ${media.tablet`
+    flex-direction:column;`}
+
+  ${media.phone`
     flex-direction:column;
-  `} ${media.phone`
-    flex-direction:column;
-    width: 95vw;
-  `};
+    width: 95vw;`};
 `;
 
 const LeftSide = styled.div`
   font-size: 2.4rem;
   padding: 4rem 2%;
+
   img {
     margin-right: 2.4rem;
+
     ${media.tablet`
-      margin-right: 0`} ${media.phone`
+      margin-right: 0`}
+
+    ${media.phone`
       margin-right: 0`};
   }
 `;
@@ -50,19 +53,24 @@ const Connect = styled.div`
   font-size: 4.5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+
   ${media.tablet`
-    display:none;
-  `} ${media.phone`
-  display:none;
-  `};
+    display:none;`}
+
+  ${media.phone`
+    display:none;`};
 `;
 
 const SocialIcons = styled.div`
   ${media.desktop`
-    min-width: 35.5rem`} ${media.tablet`
+    min-width: 35.5rem`}
+
+  ${media.tablet`
     display:flex;
     justify-content: space-around;
-    margin: 2rem;`} ${media.phone`
+    margin: 2rem;`}
+
+  ${media.phone`
     display:flex;
     justify-content: space-around;
     margin: 2rem;`};
@@ -124,65 +132,57 @@ const SmallFBIcon = styled.div`
   margin-right: 1.8rem;
 `;
 
-class SocialBar extends Component {
-  render() {
-    return (
-      <Container>
-        <TwoItemHolder>
-          <LeftSide>
-            <div>
-              We are open{" "}
-              <Highlight>Mon-Tues (11am-9pm), Wed-Sat (11am-10pm)</Highlight>,
-              and closed on Sundays. Come visit us!
-            </div>
-            <Connect>Connect with us!</Connect>
-            <SocialIcons>
-              {allSocialIcons.map((service,i) => (
-                <a
-                  href={service.linkTo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={i}
-                >
-                  <img
-                    src={service.url}
-                    key={i}
-                    alt={service.name + " icon"}
-                  />
-                </a>
-              ))}
-            </SocialIcons>
-          </LeftSide>
-          <div>
+const SocialBar = () => (
+  <Container>
+    <TwoItemHolder>
+      <LeftSide>
+        <div>
+          We are open{" "}
+          <Highlight>Mon-Tues (11am-9pm), Wed-Sat (11am-10pm)</Highlight>, and
+          closed on Sundays. Come visit us!
+        </div>
+        <Connect>Connect with us!</Connect>
+        <SocialIcons>
+          {allSocialIcons.map((service, i) => (
             <a
-              rel="noopener noreferrer"
+              href={service.linkTo}
               target="_blank"
-              href="https://www.facebook.com/meatballstoppe/posts/1604387876249769"
+              rel="noopener noreferrer"
+              key={i}
             >
-              <OuterBox>
-                <SocialWrapper>
-                  <FBImage />
-                  <ContentBlock>
-                    <Caption>
-                      Goooooo knights! Buy one get one meatball. Come swing by!
-                    </Caption>
-                    <SmallFBIcon>
-                      <img
-                        src={FBSmallIcon}
-                        alt="Facebook icon"
-                        width="40"
-                        height="40"
-                      />
-                    </SmallFBIcon>
-                  </ContentBlock>
-                </SocialWrapper>
-              </OuterBox>
+              <img src={service.url} key={i} alt={service.name + " icon"} />
             </a>
-          </div>
-        </TwoItemHolder>
-      </Container>
-    );
-  }
-}
+          ))}
+        </SocialIcons>
+      </LeftSide>
+      <div>
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.facebook.com/meatballstoppe/posts/1604387876249769"
+        >
+          <OuterBox>
+            <SocialWrapper>
+              <FBImage />
+              <ContentBlock>
+                <Caption>
+                  Goooooo knights! Buy one get one meatball. Come swing by!
+                </Caption>
+                <SmallFBIcon>
+                  <img
+                    src={FBSmallIcon}
+                    alt="Facebook icon"
+                    width="40"
+                    height="40"
+                  />
+                </SmallFBIcon>
+              </ContentBlock>
+            </SocialWrapper>
+          </OuterBox>
+        </a>
+      </div>
+    </TwoItemHolder>
+  </Container>
+);
 
 export default SocialBar;

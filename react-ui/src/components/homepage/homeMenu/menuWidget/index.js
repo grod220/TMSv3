@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -18,14 +18,10 @@ const PlaceHolder = styled.div`
   font-style: italic;
 `;
 
-class MenuWidget extends Component {
-  render() {
-    return (
-      <Container>
-        <PlaceHolder>Here is the menu widget!</PlaceHolder>
-      </Container>
-    );
-  }
-}
+const MenuWidget = () => (
+  <Container>
+    <PlaceHolder>Here is the menu widget!</PlaceHolder>
+  </Container>
+);
 
 export default MenuWidget;

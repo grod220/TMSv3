@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { media } from "../../../sharedUtilities/media";
 
 import MenuWidget from "./menuWidget/";
-
 import menuHeroImg from "./images/our_menu.jpg";
 
 const MenuHero = styled.div`
@@ -19,21 +18,17 @@ const MenuHero = styled.div`
   font-size: 11rem;
 
   ${media.tablet`
-      font-size: 10rem;
-    `} ${media.phone`
-      font-size: 9rem;
-    `};
+      font-size: 10rem;`}
+
+  ${media.phone`
+      font-size: 9rem;`};
 `;
 
-class HomeMenu extends Component {
-  render() {
-    return (
-      <div>
-        <MenuHero>Our Menu</MenuHero>
-        <MenuWidget />
-      </div>
-    );
-  }
-}
+const HomeMenu = () => (
+  <div>
+    <MenuHero>Our Menu</MenuHero>
+    <MenuWidget />
+  </div>
+);
 
 export default HomeMenu;
