@@ -8,6 +8,7 @@ import TwitterIcon from "../../assets/images/twitter.png";
 import InstagramIcon from "../../assets/images/instagram.png";
 import YelpIcon from "../../assets/images/yelp.png";
 
+// move this to config file
 const allSocialIcons = {
   facebook: { url: FBIcon, linkTo: "https://www.facebook.com/meatballstoppe/" },
   twitter: { url: TwitterIcon, linkTo: "https://twitter.com/orlandomeatball" },
@@ -155,6 +156,21 @@ class SocialBar extends Component {
             </div>
             <Connect>Connect with us!</Connect>
             <SocialIcons>
+              {/* It is better to use Object.entries
+              {Object.entries(allSocialIcons).map(([key, value]) => (
+                <a
+                  href={value.linkTo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={key}
+                >
+                  <img
+                    src={value.url}
+                    key={key}
+                    alt={key}
+                  />
+                </a>
+              ))} */}
               {Object.keys(allSocialIcons).map(service => (
                 <a
                   href={allSocialIcons[service].linkTo}

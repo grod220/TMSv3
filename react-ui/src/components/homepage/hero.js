@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { media } from "../../media.js";
 
+// better to create utils.js file for this function
 const generateHeroImage = storage => {
+  // move this function to the global utils
   const requireAll = requireContext =>
     requireContext.keys().map(requireContext);
 
