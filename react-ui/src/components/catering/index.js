@@ -1,11 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 
-// import Hero from "./hero";
+import ShortHero from "../shared/shortHero/";
+import CateringHero from "./tablesetPic.jpg";
+import BodyText from "./bodyText/";
+import ContactBar from "./contactBar/";
+import CateringTestimonials from "./cateringTestimonials/";
 
-class Catering extends Component {
-  render() {
-    return <h3>Here comes some CATERING!</h3>;
-  }
-}
+const Catering = () => (
+  <div>
+    <ShortHero image={CateringHero} headline="Catering Options" />
+    <BodyText />
+    <ContactBar />
+    <CateringTestimonials />
+  </div>
+);
 
 export default Catering;

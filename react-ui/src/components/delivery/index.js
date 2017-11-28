@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-// import Hero from "./hero";
+import ShortHero from "../shared/shortHero/";
+import DeliveryHero from "./uberEatsBiker.jpg";
 
-class Delivery extends Component {
-  render() {
-    return <h3>Here comes some Deliverys!</h3>;
-  }
-}
+const Delivery = () => (
+  <div>
+    <ShortHero image={DeliveryHero} headline="Delivery Order" />
+    SPECIAL Delivery....!
+  </div>
+);
 
 export default Delivery;

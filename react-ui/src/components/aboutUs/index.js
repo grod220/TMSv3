@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-// import Hero from "./hero";
+import ShortHero from "../shared/shortHero/";
+import AboutUsHero from "./familyDronePic.jpg";
 
-class AboutUs extends Component {
-  render() {
-    return <h3>ABOUT US</h3>;
-  }
-}
+const AboutUs = () => (
+  <div>
+    <ShortHero image={AboutUsHero} headline="About the Stoppe Famiglia" />
+    Here's the family!
+  </div>
+);
 
 export default AboutUs;

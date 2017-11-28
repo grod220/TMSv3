@@ -1,6 +1,6 @@
 import React from "react";
 
-import BigHero from "./hero/";
+import TallHero from "./hero/";
 import OrderBar from "./orderBar/";
 import SocialBar from "./socialBar/";
 import HomeMenu from "./homeMenu/";
@@ -11,7 +11,7 @@ import Footer from "./footer/"
 
 const Homepage = () => (
   <div>
-    <BigHero />
+    <TallHero />
     <OrderBar />
     <SocialBar />
     <HomeMenu />

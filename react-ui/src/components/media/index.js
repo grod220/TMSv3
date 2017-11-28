@@ -1,11 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 
-// import Hero from "./hero";
+import ShortHero from "../shared/shortHero/";
+import MediaHero from "./cameraAndStudio.jpg";
 
-class Media extends Component {
-  render() {
-    return <h3>Here comes some Medias!</h3>;
-  }
-}
+const Media = () => (
+  <div>
+    <ShortHero image={MediaHero} headline="In the media" />
+    Triple DDD and more..!
+  </div>
+);
 
 export default Media;
