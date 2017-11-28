@@ -6,8 +6,8 @@ import CouplePic from "./jeffandisabella.jpg";
 const Container = styled.div`
   display: flex;
 
-  @media (max-width: ${700/16}em) {
-      flex-direction:column;
+  @media (max-width: ${700 / 16}em) {
+    flex-direction: column;
   }
 `;
 
@@ -19,11 +19,11 @@ const LeftSide = styled.div`
   background-color: #902e2d;
   padding: 4rem;
 
-  @media (max-width: ${1170/16}em) {
-      font-size: 1.8rem;
+  @media (max-width: ${1170 / 16}em) {
+    font-size: 1.8rem;
   }
 
-  @media (max-width: ${700/16}em) {
+  @media (max-width: ${700 / 16}em) {
     padding: 1.3rem;
     text-align: center;
   }
@@ -34,11 +34,11 @@ const SectionTitle = styled.span`
   font-family: "Dancing Script", cursive;
   margin: 2rem 0;
 
-  @media (max-width: ${770/16}em) {
-      font-size: 4rem;
+  @media (max-width: ${770 / 16}em) {
+    font-size: 4rem;
   }
 
-  @media (max-width: ${700/16}em) {
+  @media (max-width: ${700 / 16}em) {
     margin: 0 0 1rem 0;
   }
 `;
@@ -52,8 +52,8 @@ const RightImage = styled.div`
   background-position: 50%;
   position: relative;
 
-  @media (max-width: ${770/16}em) {
-      height: 25rem;
+  @media (max-width: ${700 / 16}em) {
+    height: 25rem;
   }
 `;
 
