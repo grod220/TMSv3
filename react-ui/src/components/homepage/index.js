@@ -5,6 +5,7 @@ import OrderBar from "./orderBar/";
 import SocialBar from "./socialBar/";
 import HomeMenu from "./homeMenu/";
 import TestimonialTaster from "./testimonialTaster/";
+import Map from "./map/"
 
 const Homepage = () => (
   <div>
@@ -13,6 +14,7 @@ const Homepage = () => (
     <SocialBar />
     <HomeMenu />
     <TestimonialTaster />
+    <Map />
   </div>
 );
 
