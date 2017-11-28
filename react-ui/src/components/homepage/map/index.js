@@ -17,10 +17,9 @@ const MapStyle = styled.div`
 
 const directionsLink = () => {
   window.open(
-    "http://facebook.com",
-    "_blank" // <- This is what makes it open in a new window.
+    "https://www.google.de/maps/place/The+Meatball+Stoppe/@28.5323983,-81.3232052,12.69z/data=!4m5!3m4!1s0x88e765ae727e7509:0x276197e7b025a43e!8m2!3d28.5394622!4d-81.2868018?hl=en",
+    "_blank"
   );
-//   window.location.href = "http://google.com";
 };
 
 const RestaurantMap = withScriptjs(
