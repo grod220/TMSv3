@@ -27,7 +27,7 @@ const RestaurantMap = withScriptjs(
     <GoogleMap
       defaultZoom={16}
       defaultCenter={{ lat: 28.5394327, lng: -81.2868005 }}
-      defaultOptions={{ styles: MapStyles }}
+      defaultOptions={{ styles: MapStyles, disableDefaultUI: true, scrollwheel: false }}
     >
       <Marker
         position={{ lat: 28.5394327, lng: -81.2868005 }}

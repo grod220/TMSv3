@@ -6,6 +6,7 @@ import SocialBar from "./socialBar/";
 import HomeMenu from "./homeMenu/";
 import TestimonialTaster from "./testimonialTaster/";
 import Map from "./map/"
+import Passion from "./passion/"
 
 const Homepage = () => (
   <div>
@@ -15,6 +16,7 @@ const Homepage = () => (
     <HomeMenu />
     <TestimonialTaster />
     <Map />
+    <Passion />
   </div>
 );
 
