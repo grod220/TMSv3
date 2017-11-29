@@ -21,9 +21,13 @@ const RedBox = styled.div`
 const PrincipleWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 
   img {
     align-self: center;
+
+    ${media.phone`
+      width: 100%`}
   }
 `;
 
