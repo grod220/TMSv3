@@ -27,7 +27,7 @@ const PrincipleWrapper = styled.div`
     align-self: center;
 
     ${media.phone`
-      width: 100%`}
+      width: 100%`};
   }
 `;
 

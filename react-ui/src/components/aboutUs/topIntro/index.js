@@ -13,12 +13,12 @@ const Container = styled.div`
   margin: 0 auto;
 
   ${media.phone`
-    width: 90vw;`}
+    width: 90vw;`};
 `;
 
 const TopText = styled.p`
   text-align: center;
-`
+`;
 
 const PrincipleBox = styled.div`
   display: flex;
@@ -36,8 +36,8 @@ const BottomText = styled.p`
   margin: 3rem 4rem;
 
   ${media.phone`
-    margin: 3rem 0`}
-`
+    margin: 3rem 0`};
+`;
 
 const TopIntro = () => (
   <Container>
