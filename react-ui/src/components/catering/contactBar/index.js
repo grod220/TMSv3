@@ -47,7 +47,7 @@ const RightContactInfo = styled.div`
     font-size: 2.6rem`}
 
   ${media.phone`
-    font-size: 2.6rem`}
+    font-size: 6vw`}
 `;
 
 const ContactBar = () => (
