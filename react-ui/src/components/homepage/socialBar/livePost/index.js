@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { media } from "../../../sharedUtilities/media";
 
-import FBSmallIcon from "./images/fblogo.svg";
+import FBSmallIcon from "./../images/fblogo.svg";
 
 const OuterBox = styled.div`
   box-shadow: -0.5rem 0.1rem 1.3rem 0 rgba(0, 0, 0, 0.5);
@@ -34,7 +33,7 @@ const FBImage = styled.div`
   background-size: cover;
   background-position: 50%;
   position: relative;
-  background-image: url("https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/23844654_1604387842916439_7177401149980960140_n.jpg?oh=d7c97640006cc19ff49f730ca63a130c&oe=5A993FEB");
+  background-image: url(${props => props.src});
 `;
 
 const ContentBlock = styled.div`
@@ -59,29 +58,57 @@ const SmallFBIcon = styled.div`
   align-self: center;
   margin-right: 1.8rem;
 `;
+
+const LoadingAnimation = styled.div`
+  opacity: ${props => props.activated ? 1 : 0};
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 80rem 10.4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  transition: 0.6s all;
+
+  @keyframes placeHolderShimmer {
+    0% {
+      background-position: -80rem 0;
+    }
+    100% {
+      background-position: 80rem 0;
+    }
+  }
+`;
 class LivePost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // showMobileMenu: false
+      postUrl: "http://google.com",
+      caption: "Gooooo knights! Test caption",
+      imageUrl: "",
+      loading: true
     };
   }
+
+  imageReady = () => this.setState(prevState => ({ loading: false }));
 
   render() {
     return (
       <div>
-        <a
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://www.facebook.com/meatballstoppe/posts/1604387876249769"
-        >
+        <a rel="noopener noreferrer" target="_blank" href={this.state.postUrl}>
           <OuterBox>
             <SocialWrapper>
-              <FBImage />
+              <LoadingAnimation activated={this.state.loading}/>
+              <FBImage src={this.state.imageUrl} />
               <ContentBlock>
-                <Caption>
-                  Goooooo knights! Buy one get one meatball. Come swing by!
-                </Caption>
+                <Caption>{this.state.caption}</Caption>
                 <SmallFBIcon>
                   <img
                     src={FBSmallIcon}
@@ -94,6 +121,7 @@ class LivePost extends Component {
             </SocialWrapper>
           </OuterBox>
         </a>
+        <button onClick={this.imageReady}>CLICK ME</button>
       </div>
     );
   }

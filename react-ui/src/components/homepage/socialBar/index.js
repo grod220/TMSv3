@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { media } from "../../../sharedUtilities/media";
 
 import allSocialIcons from "./socialIconsInfo";
-import LivePost from "./livePost/"
+import LivePost from "./livePost/";
 
 const Container = styled.div`
   display: flex;
@@ -76,8 +76,6 @@ const SocialIcons = styled.div`
     margin: 2rem;`};
 `;
 
-
-
 const SocialBar = () => (
   <Container>
     <TwoItemHolder>
@@ -101,7 +99,7 @@ const SocialBar = () => (
           ))}
         </SocialIcons>
       </LeftSide>
-
+      <LivePost />
     </TwoItemHolder>
   </Container>
 );
