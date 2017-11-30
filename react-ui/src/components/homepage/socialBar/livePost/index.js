@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import FBSmallIcon from "./../images/fblogo.svg";
+import * as firebase from "firebase";
 
 const OuterBox = styled.div`
   box-shadow: -0.5rem 0.1rem 1.3rem 0 rgba(0, 0, 0, 0.5);
@@ -60,7 +61,7 @@ const SmallFBIcon = styled.div`
 `;
 
 const LoadingAnimation = styled.div`
-  opacity: ${props => props.activated ? 1 : 0};
+  opacity: ${props => (props.activated ? 1 : 0)};
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -90,14 +91,29 @@ class LivePost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postUrl: "http://google.com",
-      caption: "Gooooo knights! Test caption",
+      postUrl: "https://www.facebook.com/meatballstoppe",
+      caption: "",
       imageUrl: "",
       loading: true
     };
   }
 
-  imageReady = () => this.setState(prevState => ({ loading: false }));
+  componentDidMount() {
+    const fbPostRef = firebase.database().ref().child("mostRecentFBPost");
+    fbPostRef.on("value", snap => {
+      let { imageURL, message, url } = snap.val();
+      if (!message.length) {
+          url = this.state.postUrl;
+          message = "View the latest posts & announcements on Facebook"
+      }
+      this.setState({
+        imageUrl: imageURL,
+        caption: message,
+        postUrl: url,
+        loading: false
+      });
+    });
+  }
 
   render() {
     return (
@@ -105,7 +121,7 @@ class LivePost extends Component {
         <a rel="noopener noreferrer" target="_blank" href={this.state.postUrl}>
           <OuterBox>
             <SocialWrapper>
-              <LoadingAnimation activated={this.state.loading}/>
+              <LoadingAnimation activated={this.state.loading} />
               <FBImage src={this.state.imageUrl} />
               <ContentBlock>
                 <Caption>{this.state.caption}</Caption>
@@ -121,7 +137,6 @@ class LivePost extends Component {
             </SocialWrapper>
           </OuterBox>
         </a>
-        <button onClick={this.imageReady}>CLICK ME</button>
       </div>
     );
   }
