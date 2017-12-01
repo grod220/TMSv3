@@ -10,7 +10,7 @@ const Container = styled.div`
   background: url(${GuyFieriRays}) no-repeat;
   background-size: 100%;
   background-position: top;
-  height: 45rem;
+  height: 45vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,16 +21,27 @@ const TopTwo = styled.div`
     width: 80vw;
 `
 
-const TripleDHero = styled.div``;
-const SupplementalPics = styled.div``;
+const TripleDHero = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex:1;
+`;
+
+const GroupPic = styled.img`
+    border: .5rem solid #902E2D;
+    border-radius: .4rem;
+`
+const SupplementalPics = styled.div`
+    flex:1;
+`;
 const Quote = styled.p``;
 
 const TripleD = () => (
   <Container>
     <TopTwo>
       <TripleDHero>
-        <img src={dddLogo} width="100"/>
-        <img src={groupPic} width="100" />
+        <img src={dddLogo} width="60%" alt="TripleD logo"/>
+        <GroupPic src={groupPic} width="100%" alt="Group pic with Guy Fieri" />
       </TripleDHero>
       <SupplementalPics>Stuff to come!</SupplementalPics>
     </TopTwo>
