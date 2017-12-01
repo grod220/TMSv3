@@ -5,7 +5,6 @@ import { media } from "../../../sharedUtilities/media";
 import GuyFieriRays from "./images/guyFieriRays.jpg";
 import dddLogo from "./images/dddLogo.png";
 import groupPic from "./images/groupPic.jpg";
-
 import guyThinkingPic from "./images/guyThinking.jpg";
 import hotRodPic from "./images/hotRod.jpg";
 import inTheKitchenPic from "./images/inTheKitchen.jpg";
@@ -48,7 +47,7 @@ const TripleDHero = styled.div`
 `;
 
 const GroupPic = styled.img`
-  border: 0.5rem solid #902e2d;
+  border: 0.6rem solid #902e2d;
 `;
 
 const SupplementalPics = styled.div`
@@ -67,9 +66,7 @@ const LinkToAmazon = styled.span`
 
   ${media.phone`
     left: 11vw;
-    font-size: 4vw;`}
-
-  &:hover {
+    font-size: 4vw;`} &:hover {
     color: #f76e6e;
   }
 `;
@@ -79,8 +76,9 @@ const FourPics = styled.div`
     margin-top: 4rem;
 
     ${media.tablet`
-      margin-top: 6%;`} ${media.phone`
-      margin-top: 0;`};
+      margin-top: 6%;`} 
+    ${media.phone`
+      margin-top: -1.4rem;`};
   }
 
   div:nth-child(2) {
@@ -105,7 +103,22 @@ const TwoPics = styled.div`
   }
 `;
 
-const Quote = styled.p``;
+const Quote = styled.div`
+  background-color: #902e2d;
+  width: 67vw;
+  padding: 1vw;
+  color: white;
+  font-style: italic;
+  font-size: 1.7vw;
+
+  ${media.tablet`
+    width: 92vw;
+    font-size: 3.4vw;`} 
+  ${media.phone`
+    width: 88vw;
+    font-size: 4.3vw;
+    margin-top: 2rem;`};
+`;
 
 const TripleD = () => (
   <Container>
@@ -118,9 +131,7 @@ const TripleD = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkToAmazon>
-            Season 27, Episode 2: Wonder Women
-          </LinkToAmazon>
+          <LinkToAmazon>Season 27, Episode 2: Wonder Women</LinkToAmazon>
         </a>
       </TripleDHero>
       <SupplementalPics>
