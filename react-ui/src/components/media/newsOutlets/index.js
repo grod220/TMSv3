@@ -8,11 +8,30 @@ import Clipping from "./singleClipping/"
 const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
 `
 
 const InnerContainer = styled.div`
   display: flex;
   width: 80vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  ${media.tablet`
+    width: 90vw;`}
+  
+  ${media.phone`
+    width: 90vw;`}
+
+  div {
+    flex-basis: 30%;
+
+    ${media.tablet`
+      flex-basis: 45%;`}
+    
+    ${media.phone`
+      flex-basis: 92%;`}
+  }
 `
 
 const NewsOutlets = () => (
