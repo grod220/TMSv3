@@ -66,8 +66,18 @@ const LinkToAmazon = styled.span`
 `;
 
 const FourPics = styled.div`
-  div {
-    /* margin-top: 3rem; */
+  div:first-child {
+    margin-top: 4rem;
+
+    ${media.tablet`
+      margin-top: 6%;`}
+
+    ${media.phone`
+      margin-top: 0;`}
+  }
+
+  div:nth-child(2) {
+    margin-top: -4rem;
   }
 
   div:first-child > img:nth-child(2), div:nth-child(2) > img:nth-child(2) {
@@ -113,7 +123,7 @@ const TripleD = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkToAmazon>Season 27, Episode 2: Wonder Women</LinkToAmazon>
+          {/* <LinkToAmazon>Season 27, Episode 2: Wonder Women</LinkToAmazon> */}
         </a>
       </SupplementalPics>
     </TopTwo>
