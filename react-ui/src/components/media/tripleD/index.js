@@ -34,6 +34,7 @@ const TripleDHero = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
 
   ${media.phone`
       align-items: center;
@@ -48,21 +49,29 @@ const TripleDHero = styled.div`
 
 const GroupPic = styled.img`
   border: 0.5rem solid #902e2d;
-  border-radius: 0.4rem;
 `;
 
 const SupplementalPics = styled.div`
   flex: 1;
-  position: relative;
 `;
 
 const LinkToAmazon = styled.span`
   position: absolute;
   bottom: 0;
   left: 0;
-  color: gray;
-  text-decoration: underline;
+  color: white;
   font-style: italic;
+  font-size: 2vw;
+  background-color: #902e2d;
+  padding: 0 1.4rem;
+
+  ${media.phone`
+    left: 11vw;
+    font-size: 4vw;`}
+
+  &:hover {
+    color: #f76e6e;
+  }
 `;
 
 const FourPics = styled.div`
@@ -70,20 +79,18 @@ const FourPics = styled.div`
     margin-top: 4rem;
 
     ${media.tablet`
-      margin-top: 6%;`}
-
-    ${media.phone`
-      margin-top: 0;`}
+      margin-top: 6%;`} ${media.phone`
+      margin-top: 0;`};
   }
 
   div:nth-child(2) {
     margin-top: -4rem;
   }
 
-  div:first-child > img:nth-child(2), div:nth-child(2) > img:nth-child(2) {
-      margin-top: 7rem;
+  div:first-child > img:nth-child(2),
+  div:nth-child(2) > img:nth-child(2) {
+    margin-top: 7rem;
   }
-
 `;
 
 const TwoPics = styled.div`
@@ -94,7 +101,7 @@ const TwoPics = styled.div`
   img {
     align-self: center;
     max-width: 43%;
-    box-shadow: 2rem 2rem 0rem -1.4rem rgba(144,46,45,1);
+    box-shadow: 2rem 2rem 0rem -1.4rem rgba(144, 46, 45, 1);
   }
 `;
 
@@ -106,6 +113,15 @@ const TripleD = () => (
       <TripleDHero>
         <img src={dddLogo} width="60%" alt="TripleD logo" />
         <GroupPic src={groupPic} width="97%" alt="Group pic with Guy Fieri" />
+        <a
+          href="https://www.amazon.com/gp/product/B06ZZF8MJP/ref=oh_aui_d_detailpage_o01_?ie=UTF8&psc=1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkToAmazon>
+            Season 27, Episode 2: Wonder Women
+          </LinkToAmazon>
+        </a>
       </TripleDHero>
       <SupplementalPics>
         <FourPics>
@@ -118,13 +134,6 @@ const TripleD = () => (
             <img src={hotRodPic} alt="Guy Fieri in his hot rod" />
           </TwoPics>
         </FourPics>
-        <a
-          href="https://www.amazon.com/gp/product/B06ZZF8MJP/ref=oh_aui_d_detailpage_o01_?ie=UTF8&psc=1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {/* <LinkToAmazon>Season 27, Episode 2: Wonder Women</LinkToAmazon> */}
-        </a>
       </SupplementalPics>
     </TopTwo>
     <Quote>
