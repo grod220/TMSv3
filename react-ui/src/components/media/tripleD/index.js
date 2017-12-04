@@ -22,9 +22,13 @@ const Container = styled.div`
 const TopTwo = styled.div`
   display: flex;
   width: 80vw;
+  // width: calc(80 + (900 * 14 / 14))vw;
+  // TODO: Figure out how to get an increasing amount of vw with vw decrease
 
   ${media.tablet`
-      width: 94vw;`} ${media.phone`
+      width: 94vw;`} 
+  
+  ${media.phone`
       width: 94vw;
       flex-direction: column`};
 `;
