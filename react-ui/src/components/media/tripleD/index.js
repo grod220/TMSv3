@@ -114,7 +114,7 @@ const Quote = styled.div`
   padding: 1vw;
   color: white;
   font-style: italic;
-  font-size: calc(1.13vw + 0.9rem);
+  font-size: calc(1.13vw + 0.8rem);
 
   ${media.tablet`
     width: 92vw;
