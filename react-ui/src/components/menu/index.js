@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
 import ShortHero from "../shared/shortHero/";
-import MenuHero from "./images/foodImageTiles.jpg";
+import MenuHero from "./foodImageTiles.jpg";
+import TopText from "./topText/";
+import MenuGrid from "./menuGrid/";
 
-class Menu extends Component {
-  render() {
-    return (
-      <div>
-        <ShortHero image={MenuHero} headline="Our delicious menu" />
-        <h3>Here comes some menus!</h3>
-      </div>
-    );
-  }
-}
+const Menu = () => (
+  <div>
+    <ShortHero image={MenuHero} headline="Our delicious menu" />
+    <TopText />
+    <MenuGrid />
+  </div>
+);
 
 export default Menu;
