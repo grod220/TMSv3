@@ -2,9 +2,8 @@ import TenBest from "./images/10best.jpg";
 import Chomps from "./images/chomps.png";
 import Life from "./images/life.png";
 import Orlando from "./images/orlando.png";
-// import OrlMag from "./images/OrlandoMagazine.png";
 import RealRadio from "./images/realradio.png";
-// import RealAudio from "." TODO download audio file
+import InterviewMP3 from "./audio/PrimetimeKitchenInterview.mp3"
 import WESH2 from "./images/wesh2.png";
 
 
@@ -18,7 +17,7 @@ export default [
   {
     name: "Real Radio 104.1",
     image: RealRadio,
-    audio: "/assets/other/PrimetimeKitchenInterview.mp3", // TODO: add real audio file
+    audio: InterviewMP3,
     text: "The chicken meatball, buffalo style, balanced with blue cheese on top––that with the white-bean ragout is crazy killer."
   },
   {

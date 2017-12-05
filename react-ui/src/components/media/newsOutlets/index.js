@@ -1,15 +1,15 @@
 import React from "react";
-import styled from "styled-components"
-import {media} from "../../../sharedUtilities/media"
+import styled from "styled-components";
+import { media } from "../../../sharedUtilities/media";
 
-import NewsClippings from "./newsClippings"
-import Clipping from "./singleClipping/"
+import NewsClippings from "./newsClippings";
+import Clipping from "./singleClipping/";
 
 const OuterContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
-`
+  margin-top: 6rem;
+`;
 
 const InnerContainer = styled.div`
   display: flex;
@@ -18,27 +18,27 @@ const InnerContainer = styled.div`
   justify-content: space-between;
 
   ${media.tablet`
-    width: 90vw;`}
+    width: 90vw;`} 
   
   ${media.phone`
-    width: 90vw;`}
-
-  div {
-    flex-basis: 30%;
-
-    ${media.tablet`
-      flex-basis: 45%;`}
+    width: 90vw;`} 
     
-    ${media.phone`
-      flex-basis: 92%;`}
+    div {
+      flex-basis: 30%;
+
+      ${media.tablet`
+        flex-basis: 45%;`} 
+        
+      ${media.phone`
+        flex-basis: 92%;`};
   }
-`
+`;
 
 const NewsOutlets = () => (
   <OuterContainer>
-      <InnerContainer>
-        {NewsClippings.map((item, i) => <Clipping {...item} key={i}/>)}
-      </InnerContainer>
+    <InnerContainer>
+      {NewsClippings.map((item, i) => <Clipping {...item} key={i} />)}
+    </InnerContainer>
   </OuterContainer>
 );
 

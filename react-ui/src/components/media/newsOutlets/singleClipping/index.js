@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { media } from "../../../../sharedUtilities/media";
 import PropTypes from "prop-types";
 
 const Container = styled.div`
@@ -8,6 +7,10 @@ const Container = styled.div`
   font-style: italic;
   color: #989898;
   text-align: justify;
+
+  audio {
+    width: 100%;
+  }
 `;
 
 const LinkOut = styled.a`
@@ -31,7 +34,7 @@ const Clipping = ({ name, image, audio, linkTo, text }) => (
         LINK
       </LinkOut>
     ) : null}
-    {audio ? <audio controls="" src={audio} type="audio/mpeg3" /> : null}
+    {audio ? <div><audio controls src={audio} type="audio/mpeg3" /></div> : null}
   </Container>
 );
 

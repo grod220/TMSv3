@@ -21,9 +21,10 @@ const Container = styled.div`
 
 const TopTwo = styled.div`
   display: flex;
-  width: 80vw;
-  // width: calc(80 + (900 * 14 / 14))vw;
-  // TODO: Figure out how to get an increasing amount of vw with vw decrease
+  /* width: 80vw; */
+  /* width: calc(~80 + (900 * 14 / 14))vw; */
+  width: calc(80vw + 10rem);
+  /* TODO: Figure out how to get an increasing amount of vw with vw decrease */
 
   ${media.tablet`
       width: 94vw;`} 
@@ -109,11 +110,11 @@ const TwoPics = styled.div`
 
 const Quote = styled.div`
   background-color: #902e2d;
-  width: 67vw;
+  width: calc(67vw + 10rem);
   padding: 1vw;
   color: white;
   font-style: italic;
-  font-size: 1.7vw;
+  font-size: calc(1.13vw + 0.9rem);
 
   ${media.tablet`
     width: 92vw;
