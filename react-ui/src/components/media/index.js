@@ -4,8 +4,7 @@ import ShortHero from "../shared/shortHero/";
 import MediaHero from "./cameraAndStudio.jpg";
 import TripleD from "./tripleD/"
 import NewsOutlets from "./newsOutlets/"
-import VideoClipTop from "./videoClipTop/"
-import VideoClipBottom from "./videoClipBottom/"
+import VideoClips from "./videoClips/"
 import MoreVidsText from "./moreVidsText/"
 
 const Media = () => (
@@ -13,8 +12,7 @@ const Media = () => (
     <ShortHero image={MediaHero} headline="In the media" />
     <TripleD/>
     <NewsOutlets/>
-    <VideoClipTop/>
-    <VideoClipBottom />
+    <VideoClips/>
     <MoreVidsText />
   </div>
 );
