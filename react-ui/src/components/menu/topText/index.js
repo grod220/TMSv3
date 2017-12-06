@@ -25,9 +25,11 @@ const TopText = () => (
       highest quality meat and fresh ingredients. Also! There are plenty of
       options for <Highlight i>vegan &amp; glutten free (*gf)</Highlight>{" "}
       guests. Download PDF menu{" "}
-      <a href={MenuPDF} target="_blank">
-        HERE
-      </a>.
+      <Highlight i>
+        <a href={MenuPDF} target="_blank">
+          HERE
+        </a>{" "}
+      </Highlight>.
     </Centered>
   </Container>
 );

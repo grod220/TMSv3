@@ -27,9 +27,21 @@ const Container = styled.div`
   }
 `;
 
+const shuffle = (array) => {
+  let currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
+}
+
 const interweaveData = () => {
   const MenuArr = MenuData.map((section, i) => <MenuItem {...section} key={i} />);
-  const FoodPicArr = FoodPicData.map((url, i) => <FoodPicSquare imagePath={url} key={i} />);
+  const FoodPicArr = shuffle(FoodPicData.map((url, i) => <FoodPicSquare imagePath={url} key={i} />));
   const largerLength = MenuArr.length > FoodPicArr.length ? MenuArr.length : FoodPicArr.length;
   const interwoven = [];
   for (let i = 0; i < largerLength; i++) {
