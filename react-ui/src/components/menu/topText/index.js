@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { media } from "../../../sharedUtilities/media";
 
 import Highlight from "../../shared/highlight/";
+import MenuPDF from "./2018Menu.pdf";
 
 const Container = styled.div`
   display: flex;
@@ -13,10 +14,8 @@ const Container = styled.div`
 const Centered = styled.div`
   width: 78vw;
   ${media.tablet`
-    width: 94vw;`}
-
-  ${media.phone`
-    width: 94vw;`}
+    width: 94vw;`} ${media.phone`
+    width: 94vw;`};
 `;
 
 const TopText = () => (
@@ -24,7 +23,11 @@ const TopText = () => (
     <Centered>
       Hand made like your Mamma and Nonna’s. All of our dishes are made with the
       highest quality meat and fresh ingredients. Also! There are plenty of
-      options for <Highlight i>vegan &amp; glutten free (*gf)</Highlight> guests.
+      options for <Highlight i>vegan &amp; glutten free (*gf)</Highlight>{" "}
+      guests. Download PDF menu{" "}
+      <a href={MenuPDF} target="_blank">
+        HERE
+      </a>.
     </Centered>
   </Container>
 );

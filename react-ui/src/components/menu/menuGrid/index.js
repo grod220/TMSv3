@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+
 import MenuData from "./menuData";
 import MenuItem from "./menuItem/";
+import FoodPicData from "./foodPicData";
+import FoodPicSquare from "./foodPicSquare/";
 
 const Container = styled.div`
   column-width: 35rem;
@@ -24,9 +27,21 @@ const Container = styled.div`
   }
 `;
 
+const interweaveData = () => {
+  const MenuArr = MenuData.map((section, i) => <MenuItem {...section} key={i} />);
+  const FoodPicArr = FoodPicData.map((url, i) => <FoodPicSquare imagePath={url} key={i} />);
+  const largerLength = MenuArr.length > FoodPicArr.length ? MenuArr.length : FoodPicArr.length;
+  const interwoven = [];
+  for (let i = 0; i < largerLength; i++) {
+    interwoven.push(MenuArr[i])
+    interwoven.push(FoodPicArr[i])
+  }
+  return interwoven;
+};
+
 const MenuGrid = () => (
   <Container>
-    {MenuData.map((section, i) => <MenuItem {...section} key={i} />)}
+    {interweaveData()}
   </Container>
 );
 
