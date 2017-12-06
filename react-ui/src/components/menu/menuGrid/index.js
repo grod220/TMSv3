@@ -40,8 +40,8 @@ const shuffle = (array) => {
 }
 
 const interweaveData = () => {
-  const MenuArr = MenuData.map((section, i) => <MenuItem {...section} key={i} />);
-  const FoodPicArr = shuffle(FoodPicData.map((url, i) => <FoodPicSquare imagePath={url} key={i} />));
+  const MenuArr = MenuData.map((section, i) => <MenuItem {...section} key={i+FoodPicData.length} />);
+  const FoodPicArr = shuffle(FoodPicData.map((foodObj, i) => <FoodPicSquare {...foodObj} key={i} />));
   const largerLength = MenuArr.length > FoodPicArr.length ? MenuArr.length : FoodPicArr.length;
   const interwoven = [];
   for (let i = 0; i < largerLength; i++) {

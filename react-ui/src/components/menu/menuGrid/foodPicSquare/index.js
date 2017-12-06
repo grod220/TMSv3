@@ -9,8 +9,23 @@ const Box = styled.div`
   background-size: cover;
   background-position: 50%;
   background-image: url(${props => props.path});
+  position: relative;
+  text-align: right;
 `;
 
-const FoodPicSquare = ({ imagePath }) => <Box path={imagePath} />;
+const InnerText = styled.div`
+  font-size: 110%;
+  color: white;
+  position: absolute;
+  right: 1.4rem;
+  font-style: italic;
+  bottom: 1.4rem;
+`;
+
+const FoodPicSquare = ({ imagePath, name }) => (
+  <Box path={imagePath}>
+    <InnerText>{name}</InnerText>
+  </Box>
+);
 
 export default FoodPicSquare;

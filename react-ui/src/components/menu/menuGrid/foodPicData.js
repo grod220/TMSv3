@@ -9,13 +9,13 @@ import Sausage from "./images/sausage.jpg";
 import Trio from "./images/trio.jpg";
 
 export default [
-  Buffalo,
-  Calamari,
-  Eggplant,
-  Pasta,
-  Pizza,
-  Quiche,
-  Sausage,
-  Trio,
-  Canoli
+  { name: "Buffalo Chicken Sandwich", imagePath: Buffalo },
+  { name: "Calamari", imagePath: Calamari },
+  { name: "Eggplant Stack", imagePath: Eggplant },
+  { name: "Pasta Aglia e Olio", imagePath: Pasta },
+  { name: "Meatball Pizza", imagePath: Pizza },
+  { name: "Quiche", imagePath: Quiche },
+  { name: "Sausage Pepper & Onion Meatball", imagePath: Sausage },
+  { name: "Meatball Trio", imagePath: Trio },
+  { name: "Canoli", imagePath: Canoli }
 ];
