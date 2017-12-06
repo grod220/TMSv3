@@ -41,8 +41,10 @@ export default [
   {
     headline: "Meatball Flight",
     price: 19.95,
-    description:
-      "Includes 5 meatballs, polenta or white bean ragu, focaccia, beverage & cannoli"
+    items: [
+      {name: "Includes 5 meatballs, polenta or white bean ragu, focaccia, beverage & cannoli" }
+    ]
+      
   },
   {
     headline: "Bucket of 13 meatballs",
@@ -119,7 +121,7 @@ export default [
     ]
   },
   {
-    headline: "Appetizer",
+    headline: "Appetizers",
     items: [
       { name: "Meatballs on a Stick", price: 6.95 },
       { name: "5 balls", price: 8.95 },
@@ -132,7 +134,8 @@ export default [
     ]
   },
   {
-    headline: "Happy Hour :: 3-7 PM DAILY 2 for $10",
+    headline: "Happy Hour",
+    description: "3-7 PM DAILY 2 for $10",
     items: [
       { name: "Fried Calamari" },
       { name: "Baked Mozzarella" },
@@ -148,10 +151,10 @@ export default [
       { name: "Unsweet Tea - Lemonade", price: 1.5 },
       { name: "Cappuccino/ Iced Cappuccino", price: 3.5 },
       { name: "Espresso", price: 3.5 },
-      { name: "Double Espresso", price: 5.0 },
+      { name: "Double Espresso", price: 5 },
       { name: "Coffee", price: 1.5 },
       { name: "Pellegrino", price: 3.5 },
-      { name: "Domestic Beer", price: 3.0 },
+      { name: "Domestic Beer", price: 3 },
       { name: "Imported Beer", price: 5.5 },
       { name: "Craft Beer", price: 5.5 },
       { name: "Wine: Red - White", price: 5.25 },

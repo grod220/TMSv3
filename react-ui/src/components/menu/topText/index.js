@@ -24,7 +24,7 @@ const TopText = () => (
     <Centered>
       Hand made like your Mamma and Nonna’s. All of our dishes are made with the
       highest quality meat and fresh ingredients. Also! There are plenty of
-      options for <Highlight i>vegan &amp; glutten</Highlight> free guests.
+      options for <Highlight i>vegan &amp; glutten free (*gf)</Highlight> guests.
     </Centered>
   </Container>
 );
