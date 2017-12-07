@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { media } from "../../../sharedUtilities/media";
 
 import Highlight from "../../shared/highlight/";
-import MenuPDF from "./2018Menu.pdf";
+import MenuPDF from "./tmsMenu2017.pdf";
 
 const Container = styled.div`
   display: flex;

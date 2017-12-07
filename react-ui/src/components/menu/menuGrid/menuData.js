@@ -42,9 +42,11 @@ export default [
     headline: "Meatball Flight",
     price: 19.95,
     items: [
-      {name: "Includes 5 meatballs, polenta or white bean ragu, focaccia, beverage & cannoli" }
+      {
+        name:
+          "Includes 5 meatballs, polenta or white bean ragu, focaccia, beverage & cannoli"
+      }
     ]
-      
   },
   {
     headline: "Bucket of 13 meatballs",
@@ -66,9 +68,7 @@ export default [
       { name: "Marsala Mushroom" },
       { name: "Isabella’s Signature Pesto" },
       { name: "Buffalo Bleu" },
-      { name: "Spicy Pork" },
-      { name: "Buffalo Bleu" },
-      { name: "Buffalo Bleu" }
+      { name: "Spicy Pork" }
     ]
   },
   {
@@ -87,7 +87,6 @@ export default [
   },
   {
     headline: "Fresh crip salads",
-    price: 10.95,
     description: "Served with focaccia",
     items: [
       { name: "Caprese Salad", price: 7.5 },
@@ -97,17 +96,15 @@ export default [
   },
   {
     headline: "Focaccia Pizza",
-    price: 10.95,
+    price: 9.95,
     items: [
-      { name: "Meatball" },
-      { name: "Isabella’s Signature Pesto Sauce" },
       { name: "Cheese" },
-      { name: "Additional topping", price: 1.5 },
+      { name: "All toppings", extra: "$1.50 each" },
       {
         name:
-          "Salami, Banana Peppers, Onions, Red Peppers, Olives, Anchovies, Tomatoes, Arugula"
+          "Meatball, Isabella’s Pesto, Salami, Banana Peppers, Onions, Red Peppers, Olives, Anchovies, Tomatoes, Arugula"
       },
-      { name: "Focaccia Grande with two Toppings", extra: "$29.95 14 pieces" }
+      { name: "Focaccia Grande with two toppings", extra: "$29.95 14 pieces" }
     ]
   },
   {
@@ -116,8 +113,8 @@ export default [
     items: [
       { name: "Creamy Polenta", gf: true },
       { name: "White Bean Ragu", gf: true },
-      { name: "Penne Pasta with Choice of Sauce", extra: "optional gf" },
-      { name: "Linguine with Choice of Sauce" }
+      { name: "Penne Pasta with choice of sauce", extra: "optional gf" },
+      { name: "Linguine with choice of sauce" }
     ]
   },
   {
@@ -149,12 +146,12 @@ export default [
     items: [
       { name: "Coke - Diet Coke - Sprite - Fanta Orange", price: 1.5 },
       { name: "Unsweet Tea - Lemonade", price: 1.5 },
-      { name: "Cappuccino/ Iced Cappuccino", price: 3.5 },
+      { name: "Cappuccino/Iced Cappuccino", price: 3.5 },
       { name: "Espresso", price: 3.5 },
       { name: "Double Espresso", price: 5 },
       { name: "Coffee", price: 1.5 },
-      { name: "Pellegrino", price: 3.5 },
-      { name: "Domestic Beer", price: 3 },
+      { name: "Pellegrino", price: 3 },
+      { name: "Domestic Beer", price: 4 },
       { name: "Imported Beer", price: 5.5 },
       { name: "Craft Beer", price: 5.5 },
       { name: "Wine: Red - White", price: 5.25 },
