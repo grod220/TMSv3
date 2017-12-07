@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { media } from "../../../../sharedUtilities/media";
 
 import MenuData from "../../../menu/menuGrid/menuData";
 import SectionToggler from "./sectionToggler/";
 import SectionDescription from "./sectionDescription/";
+import { setTimeout } from "timers";
 
 const Container = styled.div`
   display: flex;
@@ -20,7 +22,9 @@ const TopTitles = styled.div`
   justify-content: space-around;
   border-bottom: 1px solid #ddd;
 
-  > span {
+  ${media.tablet`
+    width: 90vw;`} ${media.phone`
+    width: 94vw;`} > span {
     min-width: 12%;
   }
 `;
@@ -34,14 +38,27 @@ class MenuWidget extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: "Stoppe Trio"
+      active: "Stoppe Trio",
+      opacity: 1
     };
   }
 
   toggleSection = headline => {
+    if (headline === this.state.active) return;
+
     this.setState({
-      active: headline
+      opacity: 0
     });
+    setTimeout(() => {
+      this.setState({
+        active: headline
+      });
+    }, 200);
+    setTimeout(() => {
+      this.setState({
+        opacity: 1
+      });
+    }, 201);
   };
 
   render() {
@@ -62,6 +79,7 @@ class MenuWidget extends Component {
             <SectionDescription
               {...section}
               activeSection={this.state.active}
+              vizi={this.state.opacity}
               key={i}
             />
           ))}
