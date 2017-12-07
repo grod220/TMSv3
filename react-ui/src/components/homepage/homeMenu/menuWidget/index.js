@@ -1,27 +1,74 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
+
+import MenuData from "../../../menu/menuGrid/menuData";
+import SectionToggler from "./sectionToggler/";
+import SectionDescription from "./sectionDescription/";
 
 const Container = styled.div`
   display: flex;
   width: 100%;
-  justify-content: center;
-`;
-
-const PlaceHolder = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 50rem;
-  width: 80vw;
-  color: white;
-  background-color: #a5a5a5;
-  font-style: italic;
+  flex-direction: column;
+  margin: 2rem 0;
 `;
 
-const MenuWidget = () => (
-  <Container>
-    <PlaceHolder>Here is the menu widget!</PlaceHolder>
-  </Container>
-);
+const TopTitles = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  justify-content: space-around;
+  border-bottom: 1px solid #ddd;
+
+  > span {
+    min-width: 12%;
+  }
+`;
+
+const Descriptions = styled.div`
+  display: flex;
+  width: 80vw;
+`;
+
+class MenuWidget extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: "Stoppe Trio"
+    };
+  }
+
+  toggleSection = headline => {
+    this.setState({
+      active: headline
+    });
+  };
+
+  render() {
+    return (
+      <Container>
+        <TopTitles>
+          {MenuData.map((section, i) => (
+            <SectionToggler
+              name={section.headline}
+              activeSection={this.state.active}
+              key={i}
+              onClick={() => this.toggleSection(section.headline)}
+            />
+          ))}
+        </TopTitles>
+        <Descriptions>
+          {MenuData.map((section, i) => (
+            <SectionDescription
+              {...section}
+              activeSection={this.state.active}
+              key={i}
+            />
+          ))}
+        </Descriptions>
+      </Container>
+    );
+  }
+}
 
 export default MenuWidget;
