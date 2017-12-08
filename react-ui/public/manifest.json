@@ -1,15 +1,17 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "The Meatball Stoppe",
+  "short_name": "TMS",
+  "description":
+    "Try our delicious, savory selections of authentic, specialty meatballs",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
