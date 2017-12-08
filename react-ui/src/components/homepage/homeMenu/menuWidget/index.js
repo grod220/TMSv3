@@ -23,8 +23,12 @@ const TopTitles = styled.div`
   border-bottom: 1px solid #ddd;
 
   ${media.tablet`
-    width: 90vw;`} ${media.phone`
-    width: 94vw;`} > span {
+    width: 90vw;`} 
+  
+  ${media.phone`
+    width: 94vw;`} 
+    
+  > span {
     min-width: 12%;
   }
 `;
