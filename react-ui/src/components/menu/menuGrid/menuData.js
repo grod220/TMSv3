@@ -59,7 +59,7 @@ export default [
     ]
   },
   {
-    headline: "Fresh made sauces",
+    headline: "Freshly made sauces",
     description: "All sauces gluten free",
     items: [
       { name: "Roasted Tomato" },
@@ -108,7 +108,7 @@ export default [
     ]
   },
   {
-    headline: "Al-a-carte sides",
+    headline: "A-la-carte sides",
     price: 6.25,
     items: [
       { name: "Creamy Polenta", gf: true },
