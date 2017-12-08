@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import addZeroIfNeeded from "../../../../sharedUtilities/addZero"
+
 const RedBox = styled.div`
   background-color: #902e2d;
   color: white;
@@ -34,14 +36,6 @@ const GL = styled.span`
 const MenuItems = styled.div`
   line-height: 2rem;
 `;
-
-const addZeroIfNeeded = price => {
-  const halfsArr = String(price).split(".");
-  if (halfsArr.length > 1 && halfsArr[1].length < 2) {
-    return String(price) + "0";
-  }
-  return price;
-};
 
 const MenuItem = ({ headline, price, description, items }) => (
   <RedBox>

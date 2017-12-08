@@ -32,14 +32,20 @@ const TopTitles = styled.div`
 const Descriptions = styled.div`
   display: flex;
   width: 80vw;
+
+  ${media.tablet`
+    width: 90vw;`} 
+    
+  ${media.phone`
+    width: 94vw;`};
 `;
 
 class MenuWidget extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: "Stoppe Trio",
-      opacity: 1
+      active: null,
+      opacity: 0
     };
   }
 

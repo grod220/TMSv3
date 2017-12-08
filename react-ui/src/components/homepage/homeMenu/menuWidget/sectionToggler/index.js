@@ -7,6 +7,8 @@ const MenuTitle = styled.span`
   color: ${props => (props.activeSection === props.name ? "#902e2d" : "#bbb")};
   border-bottom: ${props => (props.activeSection === props.name ? ".1rem solid #902e2d" : "none")};
   margin-bottom: ${props => (props.activeSection === props.name ? "-.1rem" : "0")};
+  font-variant: small-caps;
+  font-size: 2.5rem;
 
   &:hover {
     color: ${props => (props.activeSection === props.name ? "#902e2d" : "#ffa2a2")};
