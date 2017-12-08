@@ -14,9 +14,9 @@ export default [
       { name: "Spicy Pork" },
       { name: "Mac & Cheese Meatball" },
       { name: "Lamb" },
-      { name: "Jeffy’s Crab Ball", extra: "add $2" },
-      { name: "Gator Meatball", extra: "add $2" },
-      { name: "Chicken Cordon Bleu", gf: true, extra: "add $2" },
+      { name: "Jeffy’s Crab Ball", extra: "add $3" },
+      { name: "Gator Meatball", extra: "add $3" },
+      { name: "Chicken Cordon Bleu", gf: true, extra: "add $3" },
       { name: "Add Iana's Gem", price: 1.5 }
     ]
   },
