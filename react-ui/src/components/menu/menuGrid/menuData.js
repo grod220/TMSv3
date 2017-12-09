@@ -86,7 +86,7 @@ export default [
     ]
   },
   {
-    headline: "Fresh crip salads",
+    headline: "Fresh crisp salads",
     description: "Served with focaccia",
     items: [
       { name: "Caprese Salad", price: 7.5 },

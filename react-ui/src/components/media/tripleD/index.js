@@ -21,10 +21,7 @@ const Container = styled.div`
 
 const TopTwo = styled.div`
   display: flex;
-  /* width: 80vw; */
-  /* width: calc(~80 + (900 * 14 / 14))vw; */
   width: calc(80vw + 10rem);
-  /* TODO: Figure out how to get an increasing amount of vw with vw decrease */
 
   ${media.tablet`
       width: 94vw;`} 
@@ -71,7 +68,9 @@ const LinkToAmazon = styled.span`
 
   ${media.phone`
     left: 11vw;
-    font-size: 4vw;`} &:hover {
+    font-size: 4vw;`} 
+    
+    &:hover {
     color: #f76e6e;
   }
 `;
@@ -136,7 +135,7 @@ const TripleD = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkToAmazon>Season 27, Episode 2: Wonder Women</LinkToAmazon>
+          <LinkToAmazon>Season 26, Episode 10: Wonder Women</LinkToAmazon>
         </a>
       </TripleDHero>
       <SupplementalPics>
