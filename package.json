@@ -27,6 +27,9 @@
   "homepage": "https://github.com/grod220/TMSv3#readme",
   "dependencies": {
     "compression": "^1.7.1",
-    "express": "^4.16.2"
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "firebase-admin": "^5.5.1",
+    "request-promise": "^4.2.2"
   }
 }

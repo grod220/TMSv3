@@ -7,10 +7,10 @@ import Catering from "./components/catering";
 import AboutUs from "./components/aboutUs";
 import Media from "./components/media";
 import Delivery from "./components/delivery";
-import createHistory from "history/createBrowserHistory";
 
 import { Router, Route } from "react-router-dom";
 
+import createHistory from "history/createBrowserHistory";
 import ReactGA from "react-ga";
 ReactGA.initialize("UA-55491347-1");
 
