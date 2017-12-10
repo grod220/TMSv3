@@ -127,16 +127,17 @@ export const MobileNavBar = styled.div`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   span {
-    color: white;
-    font-size: 4.7rem;
-    margin-left: 2rem;
+    img {
+      height: 5rem;
+    }
+    margin: 1rem 0 0 2rem;
     cursor: pointer;
   }
   img {
     height: 9.2rem;
   }
   div {
-    width: 4.2rem;
+    width: 5rem;
     margin-right: 2rem;
   }
 

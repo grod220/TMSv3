@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import TMSlogo from "./images/logo.svg";
 import MiniLogo from "./images/minilogo.svg";
 import NavItem from "./navItem";
+import HamburgerIcon from "./images/hamburger.svg";
 
 import {
   NavBar,
@@ -59,7 +60,9 @@ class Navigation extends Component {
           </NavLinks>
         </NavBar>
         <MobileNavBar>
-          <span onClick={this.toggleMobileMenu()}>&#9776;</span>
+          <span onClick={this.toggleMobileMenu()}>
+            <img src={HamburgerIcon} alt="Menu icon"  />
+          </span>
           <Link to="/">
             <img src={MiniLogo} alt="The Meatball Stoppe logo" />
           </Link>
