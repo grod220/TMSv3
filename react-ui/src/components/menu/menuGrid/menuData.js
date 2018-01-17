@@ -16,7 +16,6 @@ export default [
       { name: "Lamb" },
       { name: "Jeffy’s Crab Ball", extra: "add $3" },
       { name: "Gator Meatball", extra: "add $3" },
-      { name: "Chicken Cordon Bleu", gf: true, extra: "add $3" },
       { name: "Add Iana's Gem", price: 1.5 }
     ]
   },
@@ -54,8 +53,7 @@ export default [
     description: "One style, with choice of sauce & focaccia",
     items: [
       { name: "Veggie", extra: "add $6" },
-      { name: "Crab, Gator", extra: "add $12" },
-      { name: "Cordon Blue", extra: "add $14" }
+      { name: "Crab, Gator", extra: "add $12" }
     ]
   },
   {
@@ -126,7 +124,6 @@ export default [
       { name: "Baked Mozzarella", price: 7.95 },
       { name: "Gator or Crab Balls", price: 10.95 },
       { name: "Fried Calamari", price: 9.95 },
-      { name: "Chicken Cordon Bleu Balls", price: 13.95 },
       { name: "Meatball or Focaccia Pizza", price: 10.95 }
     ]
   },
