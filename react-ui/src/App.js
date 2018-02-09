@@ -1,37 +1,16 @@
 import React, { Component } from "react";
-import Loadable from "react-loadable";
 import { Router, Route } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import ReactGA from "react-ga";
+import loadable from "./sharedUtilities/loadableHelper";
+
 import Navigation from "./components/shared/navigation/";
 import Homepage from "./components/homepage";
-
-const Loading = () => <h1>Loading...</h1>;
-
-const Menu = Loadable({
-  loader: () => import("./components/menu"),
-  loading: Loading
-});
-
-const Catering = Loadable({
-  loader: () => import("./components/catering"),
-  loading: Loading
-});
-
-const AboutUs = Loadable({
-  loader: () => import("./components/aboutUs"),
-  loading: Loading
-});
-
-const Media = Loadable({
-  loader: () => import("./components/media"),
-  loading: Loading
-});
-
-const Delivery = Loadable({
-  loader: () => import("./components/delivery"),
-  loading: Loading
-});
+const Menu = loadable(() => import("./components/menu"));
+const Catering = loadable(() => import("./components/catering"));
+const AboutUs = loadable(() => import("./components/aboutUs"));
+const Media = loadable(() => import("./components/media"));
+const Delivery = loadable(() => import("./components/delivery"));
 
 ReactGA.initialize("UA-55491347-1");
 
