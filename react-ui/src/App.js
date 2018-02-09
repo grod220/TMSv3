@@ -1,17 +1,17 @@
 import React, { Component } from "react";
+import { Router, Route } from "react-router-dom";
+import createHistory from "history/createBrowserHistory";
+import ReactGA from "react-ga";
+import loadable from "./sharedUtilities/loadableHelper";
 
 import Navigation from "./components/shared/navigation/";
 import Homepage from "./components/homepage";
-import Menu from "./components/menu";
-import Catering from "./components/catering";
-import AboutUs from "./components/aboutUs";
-import Media from "./components/media";
-import Delivery from "./components/delivery";
+const Menu = loadable(() => import("./components/menu"));
+const Catering = loadable(() => import("./components/catering"));
+const AboutUs = loadable(() => import("./components/aboutUs"));
+const Media = loadable(() => import("./components/media"));
+const Delivery = loadable(() => import("./components/delivery"));
 
-import { Router, Route } from "react-router-dom";
-
-import createHistory from "history/createBrowserHistory";
-import ReactGA from "react-ga";
 ReactGA.initialize("UA-55491347-1");
 
 const history = createHistory();
