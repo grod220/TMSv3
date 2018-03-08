@@ -18,7 +18,7 @@ The app repo for themeatballstoppe.com. If you're in the Orlando area, give us a
 
 
 #### How to dev locally
-For front-end: cd into react-ui/ and 'npm install && start'
+For front-end: cd into react-app/ and 'npm install && start'
 For back-end: npm start from root. May need to run 'npm install && npm run heroku-postbuild && npm start'
 
 ### Notes

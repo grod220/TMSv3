@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
-app.use(express.static(path.resolve(__dirname, "./react-ui/build")));
+app.use(express.static(path.resolve(__dirname, "./react-app/build")));
 
 app.use("/api", require("./api"));
 
 app.get("*", function(request, response) {
-  response.sendFile(path.resolve(__dirname, "./react-ui/build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "./react-app/build", "index.html"));
 });
 
 app.listen(PORT, function() {

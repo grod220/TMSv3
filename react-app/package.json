@@ -1,9 +1,9 @@
 {
-  "name": "tmsv3-react-ui",
+  "name": "tmsv3-react-app",
   "version": "3.0.0",
   "private": true,
   "dependencies": {
-    "firebase": "^4.9.1",
+    "firebase": "^4.10.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ga": "^2.4.1",
